@@ -1,0 +1,124 @@
+/**
+Theme Name: CFAL
+Author: George Lerner
+Author URI:
+Description: Astra http://wpastra.com/about/ child theme. Customizations for site colors, WooCommerce, LearnDash, WS Form.
+Version: 1.0.0
+Requires at least: 6.1
+Tested up to: 6.2.2
+Requires PHP: 7.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cfal
+Template: astra
+*/
+:root body {
+	/* default 910px, set somewhere, makes WooCommerce product name in LearnDash way too narrow */
+	--wp--custom--ast-content-width-size: 1200px;
+}
+
+/* Logo SVG colors -- but WordPress SVG plugins seem to be blocking this, had to put colors in the SVG file  */
+path#logotophead, path#logotopbody {
+    fill: #028bfc;
+}
+path#logolefthead, path#logoleftbody {
+    fill: #24428e;
+}
+path#logorighthead, path#logorightbody {
+    fill: #24428e;
+}
+path#logoouterring {
+    fill: #24428e;
+}
+
+/* Display of lists in inner flex containers */
+.learndash-wrapper .ld-focus .ld-tab-content .e-con-full.e-con ol ul {
+    padding-left: 0;
+}
+
+/* for twentytwentythree theme, probably most themes */
+.woocommerce .quantity input[type=number] {
+    width: 6rem;    /* default doesn't show any quantity digits, this allows display quantity up to 999 */
+}
+
+.elementor-nav-menu--layout-horizontal .elementor-nav-menu a {
+    white-space: nowrap;
+    flex-grow: 1;
+    text-decoration: none;
+}
+
+/* big CSS hover underline, thin un-hovered */
+a, .elementor a:where(:not(.wp-element-button)) {
+    vertical-align: baseline;
+    color: var(--wp--preset--color--complementary-dark);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-decoration: underline;
+    text-decoration-thickness: .1em;  /* .25rem all the same thickness made too thick for tiny text */
+    text-underline-offset: .25em;		/* em so offset on large fonts clears descenders */
+}
+a:hover, .elementor p.elementor-heading-title a:hover {
+	text-underline-offset: .2em;
+    text-decoration-skip-ink: auto;
+}
+/* site title font needs different spacing */
+.elementor p.elementor-heading-title a:where(:not(.wp-element-button)) {
+    text-underline-offset: 0.25em;
+}
+
+
+/** Styles for making "chat bubbles" in an Elementor page (or any page where you can define a CSS class for a block)
+* add to Elementor, container for chat left and right Text Editor elements,
+*    Advanced tab, CSS Class, type this: chat-container
+* add to Elementor, chat left and right Text Editor elements,
+*   Advanced tab, CSS Class, type one of these:
+*    chat-left
+*    or
+*    chat-right
+* Add all this CSS to the container, Advanced Tab, Custom CSS
+*    or, add all this to the theme's style.css file
+*/
+.chat-container {
+  width: 35em;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+}
+.chat-container p {
+  margin-bottom: 1.5em;
+  padding: 12px;
+  border-radius: 10px;
+}
+.chat-container .chat-left p {
+  background-color: #dcedc8;
+  text-align: left;
+  margin-right: 5em;
+  margin-left: 0;
+}
+.chat-container .chat-right p {
+  background-color: #e0f7fa;
+  margin-left: 5em;
+  text-align: right;
+}
+/* end of styling for chat bubbles */
+
+
+/* styling for WS Form */
+
+.wsf-field, input[type="checkbox"].wsf-field + label.wsf-label, input[type="checkbox"].wsf-field + label.wsf-label::before {
+	color: var(--wp--preset--color--foreground);
+    background-color: var(--wp--preset--color--secondary);
+}
+.ws-form .wsf-alert {
+	background-color: var(--wp--preset--color--secondary);
+    border-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--foreground);
+}
+.wsf-help {
+	color: var(--wp--preset--color--foreground);
+	display: block;
+	font-size: var(--wp--preset--font-size--normal);
+	line-height: 1.4;
+	margin-top: 5px;
+}
+/* end WS Form */
