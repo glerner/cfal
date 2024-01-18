@@ -67,6 +67,10 @@ a:hover, .elementor p.elementor-heading-title a:hover {
     text-underline-offset: 0.25em;
 }
 
+/* Elementor logo background, e.g. when have transparent background SVG image */
+div.ld-brand-logo img {
+    background-color: var(--wp--preset--color--highlight3); /* logo gold */
+}
 
 /** Styles for making "chat bubbles" in an Elementor page (or any page where you can define a CSS class for a block)
 * add to Elementor, container for chat left and right Text Editor elements,
@@ -102,6 +106,76 @@ a:hover, .elementor p.elementor-heading-title a:hover {
 }
 /* end of styling for chat bubbles */
 
+/* Elementor Price List element used incorrectly for LearnDash module outline */
+ul.elementor-price-list a.elementor-price-list-item, a.elementor-price-list-item {
+    text-decoration: none;
+}
+
+
+
+/* <details> accordion - Quick Reminder that Details/Summary is the Easiest Way Ever to Make an Accordion | CSS-Tricks https://css-tricks.com/quick-reminder-that-details-summary-is-the-easiest-way-ever-to-make-an-accordion/
+and improved https://codepen.io/thomashigginbotham/pen/aYqvqQ?editors=1100
+
+<details>
+  <summary>What's a Po' Boy?</summary>
+  A po' boy (also po-boy, po boy) is a traditional sandwich from Louisiana. It almost always consists of meat, which is usually roast beef or fried seafood, often shrimp, crawfish, fish, oysters or crab.
+</details>
+*/
+
+details {
+    margin: 1rem;
+}
+summary {
+    font-weight: bold;
+    list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
+  }
+    details[open] summary {
+    list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/down-arrow.svg);
+}
+summary::-webkit-details-marker {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
+    color: transparent;
+}
+    details[open] summary::-webkit-details-marker {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/down-arrow.svg);
+}
+
+
+
+/* Jill's divider element, right-arrows spaced across window  */
+.elementor-widget-divider{--divider-border-style:none;--divider-border-width:1px;--divider-color:#0c0d0e;--divider-icon-size:20px;--divider-element-spacing:10px;--divider-pattern-height:24px;--divider-pattern-size:20px;--divider-pattern-url:none;--divider-pattern-repeat:repeat-x}.elementor-widget-divider .elementor-divider{display:flex}.elementor-widget-divider .elementor-divider__text{font-size:15px;line-height:1;max-width:95%}.elementor-widget-divider .elementor-divider__element{margin:0 var(--divider-element-spacing);flex-shrink:0}.elementor-widget-divider .elementor-icon{font-size:var(--divider-icon-size)}.elementor-widget-divider .elementor-divider-separator{display:flex;margin:0;direction:ltr}.elementor-widget-divider--view-line_icon .elementor-divider-separator,.elementor-widget-divider--view-line_text .elementor-divider-separator{align-items:center}.elementor-widget-divider--view-line_icon .elementor-divider-separator:after,.elementor-widget-divider--view-line_icon .elementor-divider-separator:before,.elementor-widget-divider--view-line_text .elementor-divider-separator:after,.elementor-widget-divider--view-line_text .elementor-divider-separator:before{display:block;content:"";border-bottom:0;flex-grow:1;border-top:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--element-align-left .elementor-divider .elementor-divider-separator>.elementor-divider__svg:first-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-left .elementor-divider-separator:before{content:none}.elementor-widget-divider--element-align-left .elementor-divider__element{margin-left:0}.elementor-widget-divider--element-align-right .elementor-divider .elementor-divider-separator>.elementor-divider__svg:last-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-right .elementor-divider-separator:after{content:none}.elementor-widget-divider--element-align-right .elementor-divider__element{margin-right:0}.elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon) .elementor-divider-separator{border-top:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--separator-type-pattern{--divider-border-style:none}.elementor-widget-divider--separator-type-pattern.elementor-widget-divider--view-line .elementor-divider-separator,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:after,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:before,.elementor-widget-divider--separator-type-pattern:not([class*=elementor-widget-divider--view]) .elementor-divider-separator{width:100%;min-height:var(--divider-pattern-height);-webkit-mask-size:var(--divider-pattern-size) 100%;mask-size:var(--divider-pattern-size) 100%;-webkit-mask-repeat:var(--divider-pattern-repeat);mask-repeat:var(--divider-pattern-repeat);background-color:var(--divider-color);-webkit-mask-image:var(--divider-pattern-url);mask-image:var(--divider-pattern-url)}.elementor-widget-divider--no-spacing{--divider-pattern-size:auto}.elementor-widget-divider--bg-round{--divider-pattern-repeat:round}.rtl .elementor-widget-divider .elementor-divider__text{direction:rtl}.e-con-inner>.elementor-widget-divider,.e-con>.elementor-widget-divider{width:var(--container-widget-width,100%);--flex-grow:var(--container-widget-flex-grow)}
+/*
+<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 24 24' fill='black' stroke='none'%3E%3Cpath d='M14.2,4c0.3,0,0.5,0.1,0.7,0.3l7.9,7.2c0.2,0.2,0.3,0.4,0.3,0.7s-0.1,0.5-0.3,0.7l-7.9,7.2c-0.2,0.2-0.4,0.3-0.7,0.3s-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7l0-2.9l-11.5,0c-0.4,0-0.7-0.3-0.7-0.7V9.4C1,9,1.3,8.7,1.7,8.7l11.5,0l0-3.6c0-0.3,0.1-0.5,0.3-0.7S13.9,4,14.2,4z'/%3E%3C/svg%3E&quot;);">
+<span class="elementor-divider-separator">
+	</span>
+</div>
+*/
+
+/* styling for all forms
+ * https://web.dev/learn/forms/styling
+ */
+label, input, textarea, select {
+  font-size: 1.3rem;
+  line-height: 1.4
+}
+
+form {
+  width: 30em;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+label {
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+input,
+textarea {
+  padding: 0.4rem;
+  width: 100%;
+  border: 1px solid;
+}
 
 /* styling for WS Form */
 
@@ -122,3 +196,16 @@ a:hover, .elementor p.elementor-heading-title a:hover {
 	margin-top: 5px;
 }
 /* end WS Form */
+
+/* Core fix of "blue" admin area colors has white on pale gold */
+/* from /wp-admin/css/colors/blue/colors.min.css
+ * --e-button variables are probably from Elementor, not valid on all sites */
+*/
+.wp-core-ui .button-primary {
+    background: var(--e-button-context-color-dark); /* or var(--lt-color-gray-900) */
+    color: #fff;
+}
+.wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+    background: var(--e-button-context-color); /* or var(--lt-color-gray-600) */
+    color: #fff;
+}

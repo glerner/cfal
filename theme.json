@@ -232,8 +232,8 @@
 				},
 				{
 					"slug": "highlight3",
-					"color": "#C1E3C1",
-					"name": "Highlight 3"
+					"color": "#EEBA57",
+					"name": "Highlight logo gold"
 				}
 			]
 		},
@@ -380,7 +380,7 @@
 					"radius": "0"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--primary)",
+					"background": "var(--wp--preset--color--complementary)",
 					"text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
@@ -487,6 +487,12 @@
 			"link": {
 				"color": {
 					"text": "var(--wp--preset--color--complementary)"
+				}
+			},
+			"button": {
+				"color": {
+					"background": "var:preset|color|complementary",
+					"text": "var:preset|color|"
 				}
 			}
 		},
