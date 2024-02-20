@@ -177,9 +177,52 @@ textarea {
   border: 1px solid;
 }
 
+/* Elementor buttons */
+.menu-toggle, button, .ast-button, .ast-custom-button, .button, input#submit, input[type="button"], input[type="submit"], input[type="reset"] {
+    color: var(--ast-global-color-0);
+    border-color: var(--ast-global-color-4);
+    background-color: var(--ast-global-color-8);
+    font-family: var(--e-global-typography-primary-font-family);
+    font-weight: var(--e-global-typography-accent-font-weight);
+}
+.elementor-button {
+    line-height: 1.5;       /* default 1 */
+    background-color: var(--wp--preset--color--complementary-dark);      /* default #69727d */
+    color: var(--wp--preset--color--background);
+    fill: var(--wp--preset--color--background);
+    font-size: 1em;     /* default 15px */
+}
+
+
 /* Styling for Brevo signup form */
+/* this set in theme.json
+    input:where( :not( [type=checkbox] ):not( [type=radio ] ) ), select, textarea {
+    color: var( --wp--custom--form-input--color, inherit );
+    background: var( --wp--custom--form-input--background, transparent );
+    border: 1px solid var( --wp--custom--form-input--border-color, currentColor );
+}
+*/
+#sib-container input::placeholder {
+    text-align: left;
+    font-family: var(--wp--preset--font-family--better-monospace);
+    color: var( --wp--custom--form-input--color, inherit );
+    background: var( --wp--custom--form-input--background, transparent );
+    border: 1px solid var( --wp--custom--form-input--border-color, currentColor );
+  }
+
+  #sib-container textarea::placeholder {
+    text-align: left;
+    font-family: var(--wp--preset--font-family--better-monospace);
+    color: var( --wp--custom--form-input--color, inherit );
+    background: var( --wp--custom--form-input--background, transparent );
+    border: 1px solid var( --wp--custom--form-input--border-color, currentColor );
+  }
+
 .sib_signup_form {
-    background-color: var(--ast-global-color-4);
+    /* No background color, set it in Elementor putting the shortcode in a container and giving the container a background
+     * alternative: add background color to the shortcode block
+     */
+    /* background-color: var(--ast-global-color-4); */
     padding: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -226,4 +269,11 @@ input.sib-default-btn {
 .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
     background: var(--e-button-context-color); /* or var(--lt-color-gray-600) */
     color: #fff;
+}
+
+/* user-highlighted text */
+::selection {
+    background-color: var(--wp--preset--color--secondary-dark);
+    /* default Astra, Customizer, Accent color */
+    color: var(--wp--preset--color--white);
 }

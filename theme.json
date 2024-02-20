@@ -223,17 +223,17 @@
 				{
 					"slug": "highlight1",
 					"color": "#7DE37D",
-					"name": "Highlight 1"
+					"name": "Highlight green"
 				},
 				{
 					"slug": "highlight2",
 					"color": "#E88080",
-					"name": "Highlight 2"
+					"name": "Highlight red"
 				},
 				{
 					"slug": "highlight3",
 					"color": "#EEBA57",
-					"name": "Highlight logo gold"
+					"name": "Highlight yellow"
 				}
 			]
 		},
@@ -380,7 +380,7 @@
 					"radius": "0"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--complementary)",
+					"background": "var(--wp--preset--color--complementary-dark)",
 					"text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
@@ -491,8 +491,13 @@
 			},
 			"button": {
 				"color": {
-					"background": "var:preset|color|complementary",
-					"text": "var:preset|color|"
+					"background": "var:preset|color|cfal-gold",
+					"text": "var:preset|color|tertiary-darker"
+				},
+				":hover": {
+					"color": {
+						"text": "var:preset|color|black",
+						"background": "var:preset|color|tertiary-lighter"					}
 				}
 			}
 		},
